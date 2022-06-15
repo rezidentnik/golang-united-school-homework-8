@@ -14,6 +14,10 @@ var (
 	idArgKey        string = "id"
 )
 
+func getOperationList() []string {
+	return []string{operationArgKey, filenameArgKey, itemArgKey, idArgKey}
+}
+
 type operation interface {
 	execute(Arguments, io.Writer) error
 	setNext(operation)

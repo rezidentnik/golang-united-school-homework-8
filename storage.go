@@ -12,40 +12,6 @@ type user struct {
 	Age   int    `json:"age"`
 }
 
-// func (u user) MarshalJSON() ([]byte, error) {
-// 	j, err := json.Marshal(struct {
-// 		Id    string
-// 		Email string
-// 		Age   int
-// 	}{
-// 		Id:    u.id,
-// 		Email: u.email,
-// 		Age:   u.age,
-// 	})
-// 	if err != nil {
-// 		return nil, err
-// 	}
-// 	return j, nil
-// }
-
-// func (u user) UnmarshalJSON(b []byte) error {
-// 	temp := &struct {
-// 		Id    string
-// 		Email string
-// 		Age   int
-// 	}{}
-
-// 	if err := json.Unmarshal(b, &temp); err != nil {
-// 		return err
-// 	}
-
-// 	u.id = temp.Id
-// 	u.email = temp.Email
-// 	u.age = temp.Age
-
-// 	return nil
-// }
-
 type userStorage struct {
 	filename string
 }

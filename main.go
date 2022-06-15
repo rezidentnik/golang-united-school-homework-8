@@ -43,10 +43,18 @@ func configureOperations() operation {
 
 func parseArgs() Arguments {
 	args := Arguments{}
-	for _, argKey := range []string{operationArgKey, filenameArgKey, itemArgKey, idArgKey} {
-		flag.String(args[argKey], argKey, "")
+	argsContainter := map[string]interface{}{}
+
+	for _, argKey := range getOperationList() {
+		argsContainter[argKey] = flag.String(argKey, "", "")
 	}
 	flag.Parse()
+
+	for argKey, argValue := range argsContainter {
+		if valueAsString, ok := argValue.(*string); ok {
+			args[argKey] = *valueAsString
+		}
+	}
 
 	return args
 }
