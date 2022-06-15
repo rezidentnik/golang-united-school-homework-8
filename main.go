@@ -45,7 +45,7 @@ func parseArgs() Arguments {
 	args := Arguments{}
 	argsContainter := map[string]interface{}{}
 
-	for _, argKey := range getOperationList() {
+	for _, argKey := range getArgumentsList() {
 		argsContainter[argKey] = flag.String(argKey, "", "")
 	}
 	flag.Parse()

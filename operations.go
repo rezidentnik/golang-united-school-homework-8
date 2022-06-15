@@ -14,7 +14,7 @@ var (
 	idArgKey        string = "id"
 )
 
-func getOperationList() []string {
+func getArgumentsList() []string {
 	return []string{operationArgKey, filenameArgKey, itemArgKey, idArgKey}
 }
 
